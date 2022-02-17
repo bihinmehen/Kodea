@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'Kodea',
       home: Scaffold(
         backgroundColor: renkler.background,
-        body: VeriGonder(),
+        body: KarsilamaEkrani(),
       ),
     );
   }

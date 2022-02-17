@@ -92,22 +92,30 @@ class KarsilamaEkrani extends StatelessWidget {
                   child: Column(
                     children: [
                       //Button
-                      butonlar("Giriş Yap", LoginWidget()),
-                      butonlar("Sosyal Medya", LoginWidget()),
-                      butonlar("Bize Katıl", LoginWidget()),
+                      butonlar(text: "Giriş Yap", screenName: LoginWidget()),
+                      butonlar(text: "Sosyal Medya", screenName: LoginWidget()),
+                      butonlar(text: "Bize Katıl", screenName: LoginWidget()),
                     ],
                   ),
                 ),
                 Wrap(
                   children: [
-                    kutuMesajlar("Neler Yaptık?",
-                        "Biz bu uygulamada, sizlere DragDrop mağazası, DragDrop Araçları ve Eklentilerini sağladık. Bizi desteklemek için bu web uygulamamızı kullanmaya devam edebilirsiniz! Daha fazla içeriğe erişebilmemiz için geliştirdiğiniz içerikleri bizimle paylaşın, KodEnvanteri yalnız bırakmayın. :')"),
-                    kutuMesajlar("Geliştiriciler",
-                        "Ruwis ve Jea tarafından geliştirilen KodEnvanter, Flutter ve Dart ile geliştirildi. İçerikler ise sizin gibi insanlar tarafından geliştiriliyor. İlerleyen zamanlarda Telegram gibi platformlarda aktif olabilmek adına Python ile müthiş botlarımız sizlere hizmet verecek!"),
-                    kutuMesajlar("Fiyatlandırma",
-                        "Geliştiriciler, içeriklerini veya ürünlerini, ücretli-üretsiz olarak yayınlayabilir. KodEnvanter hiç bir satın almayı desteklemez. Satın almayı destekleyen bankalar ile çalışan geliştiriciler, KodEnvantere yalnızca bağış veya satın alım bağlantısı verebilir. Daha fazla bilgi için YouTube kanalımıza bakın."),
-                    kutuMesajlar("DragDrop Nedir?",
-                        "DragDrop, farklı yazılım dilleri için bir çeşit görsel kodlama yöntemidir. Biz bu serviste Java destekli Kodular, AppInventor veya Thunkable gibi platformları destekliyoruz. Java ile Android uygulamalar geliştiriliyor. Bu servisimiz, Android işletim sistemlerine çalışacak şekilde tasarlandı."),
+                    kutuMesajlar(
+                        title: "Neler Yaptık?",
+                        subtitle:
+                            "Biz bu uygulamada, sizlere DragDrop mağazası, DragDrop Araçları ve Eklentilerini sağladık. Bizi desteklemek için bu web uygulamamızı kullanmaya devam edebilirsiniz! Daha fazla içeriğe erişebilmemiz için geliştirdiğiniz içerikleri bizimle paylaşın, KodEnvanteri yalnız bırakmayın. :')"),
+                    kutuMesajlar(
+                        title: "Geliştiriciler",
+                        subtitle:
+                            "Ruwis ve Jea tarafından geliştirilen KodEnvanter, Flutter ve Dart ile geliştirildi. İçerikler ise sizin gibi insanlar tarafından geliştiriliyor. İlerleyen zamanlarda Telegram gibi platformlarda aktif olabilmek adına Python ile müthiş botlarımız sizlere hizmet verecek!"),
+                    kutuMesajlar(
+                        title: "Fiyatlandırma",
+                        subtitle:
+                            "Geliştiriciler, içeriklerini veya ürünlerini, ücretli-üretsiz olarak yayınlayabilir. KodEnvanter hiç bir satın almayı desteklemez. Satın almayı destekleyen bankalar ile çalışan geliştiriciler, KodEnvantere yalnızca bağış veya satın alım bağlantısı verebilir. Daha fazla bilgi için YouTube kanalımıza bakın."),
+                    kutuMesajlar(
+                        title: "DragDrop Nedir?",
+                        subtitle:
+                            "DragDrop, farklı yazılım dilleri için bir çeşit görsel kodlama yöntemidir. Biz bu serviste Java destekli Kodular, AppInventor veya Thunkable gibi platformları destekliyoruz. Java ile Android uygulamalar geliştiriliyor. Bu servisimiz, Android işletim sistemlerine çalışacak şekilde tasarlandı.")
                   ],
                 ),
               ],
@@ -118,7 +126,7 @@ class KarsilamaEkrani extends StatelessWidget {
     );
   }
 
-  Padding butonlar(String text, Widget screenName) {
+  Padding butonlar({required String text, required Widget screenName}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -150,7 +158,7 @@ class KarsilamaEkrani extends StatelessWidget {
     );
   }
 
-  Padding kutuMesajlar(title, subtitle) {
+  Padding kutuMesajlar({required String title, required String subtitle}) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
