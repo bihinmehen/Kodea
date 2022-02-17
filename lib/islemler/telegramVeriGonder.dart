@@ -39,25 +39,18 @@ class TelegramIslemleri {
         "\n" +
         "\n\nBu istek, web uygulaması üzerinden gönderildi.";
 
-    if (isim == "") {
-      if (gelistirici == "") {
-        if (surum == "") {
-          if (platform == "") {
-            if (applink == "") {
-              if (logo == "") {
-                if (payments == "") {
-                  if (docs == "") {
-                    return [
-                      "Boş alanlar mevcut",
-                      "Tüm kutuları eksik doldurduğunuzdan emin olun."
-                    ];
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    if (isim == "" ||
+        gelistirici == "" ||
+        surum == "" ||
+        platform == "" ||
+        applink == "" ||
+        logo == "" ||
+        payments == "" ||
+        docs == "") {
+      return [
+        "Boş alanlar mevcut",
+        "Tüm kutuları eksik doldurduğunuzdan emin olun."
+      ];
     } else {
       var url = Uri.parse(
           "https://api.telegram.org/bot$token/sendmessage?chat_id=$chatID&text=$message");
