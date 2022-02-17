@@ -50,9 +50,16 @@ class _LoginWidgetState extends State<LoginWidget> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                textBox("E-posta", _epostaController, false,
-                    TextInputType.emailAddress),
-                textBox("Şifre", _sifreController, true, TextInputType.text),
+                textBoxW(
+                    hint: "E-posta",
+                    controller: _epostaController,
+                    obfuscate: false,
+                    type: TextInputType.emailAddress),
+                textBoxW(
+                    hint: "Şifre",
+                    controller: _sifreController,
+                    obfuscate: true,
+                    type: TextInputType.text),
               ],
             ),
           ),
@@ -106,9 +113,24 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
     );
   }
+}
 
-  Container textBox(String hint, TextEditingController controller,
-      bool obfuscate, TextInputType type) {
+class textBoxW extends StatelessWidget {
+  const textBoxW({
+    Key? key,
+    required this.hint,
+    required this.controller,
+    required this.obfuscate,
+    required this.type,
+  }) : super(key: key);
+
+  final String hint;
+  final TextEditingController controller;
+  final bool obfuscate;
+  final TextInputType type;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       margin: Get.width > 700
           ? const EdgeInsets.symmetric(horizontal: 150, vertical: 15)

@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uygulama/dataSend.dart';
+
+import 'package:uygulama/homePage.dart';
 import 'package:uygulama/login.dart';
 
 import 'constants/colors.dart';
@@ -27,10 +30,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kodea',
-      home: Scaffold(
-        backgroundColor: renkler.background,
-        body: LoginWidget(),
-      ),
+      home: Scaffold(backgroundColor: renkler.background, body: homePage()
+          // LoginWidget(),
+          ),
     );
   }
 }
