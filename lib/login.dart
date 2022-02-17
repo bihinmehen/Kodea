@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uygulama/anasayfa.dart';
-import 'package:uygulama/islemler/firebase_login.dart';
+import 'package:uygulama/islemler/firebaseLogin.dart';
 
 import 'constants/colors.dart';
 
-Renkler renkler = Renkler();
+final Renkler _renkler = Renkler();
 String _girisHatasi = "";
 
 class LoginWidget extends StatefulWidget {
@@ -36,7 +36,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       style: TextStyle(
                         fontFamily: "Alatsi",
                         fontSize: 50,
-                        color: renkler.koyu,
+                        color: _renkler.koyu,
                       ),
                     ),
                   ],
@@ -88,7 +88,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                   ),
                   style: TextButton.styleFrom(
-                      backgroundColor: renkler.arkaplan,
+                      backgroundColor: _renkler.arkaplan,
                       primary: Colors.white,
                       textStyle: const TextStyle(
                         fontSize: 17,
@@ -136,14 +136,14 @@ class TextBoxW extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        border: Border.all(width: 2, color: renkler.koyu),
+        border: Border.all(width: 2, color: _renkler.koyu),
       ),
       child: TextField(
         keyboardType: type,
         obscureText: obfuscate,
         style: TextStyle(
           fontSize: 20,
-          color: renkler.koyu,
+          color: _renkler.koyu,
         ),
         controller: controller,
         decoration: InputDecoration(
@@ -151,7 +151,7 @@ class TextBoxW extends StatelessWidget {
           hintText: hint,
           hintStyle: TextStyle(
             fontSize: 20,
-            color: renkler.orta,
+            color: _renkler.orta,
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uygulama/anasayfa.dart';
 import 'package:uygulama/karsilamaEkrani.dart';
 import 'package:uygulama/login.dart';
 import 'package:uygulama/veriGonder.dart';

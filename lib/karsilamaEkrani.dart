@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uygulama/constants/colors.dart';
 import 'package:uygulama/login.dart';
 
 class KarsilamaEkrani extends StatelessWidget {
-  const KarsilamaEkrani({Key? key}) : super(key: key);
+  KarsilamaEkrani({Key? key}) : super(key: key);
+
+  Renkler _renkler = Renkler();
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class KarsilamaEkrani extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            color: renkler.koyu,
+            color: _renkler.koyu,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -23,7 +26,7 @@ class KarsilamaEkrani extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: "Alatsi",
                       fontSize: 25,
-                      color: renkler.baslik,
+                      color: _renkler.baslik,
                     ),
                   ),
                 ),
@@ -35,21 +38,21 @@ class KarsilamaEkrani extends StatelessWidget {
                         onPressed: () {},
                         icon: Icon(
                           Icons.library_books,
-                          color: renkler.baslik,
+                          color: _renkler.baslik,
                         ),
                       ),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
                           Icons.science,
-                          color: renkler.baslik,
+                          color: _renkler.baslik,
                         ),
                       ),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
                           Icons.store,
-                          color: renkler.baslik,
+                          color: _renkler.baslik,
                         ),
                       ),
                     ],
@@ -71,7 +74,7 @@ class KarsilamaEkrani extends StatelessWidget {
                         : Get.width < 500
                             ? 40
                             : 40,
-                    color: renkler.koyu,
+                    color: _renkler.koyu,
                   ),
                 ),
                 Text(
@@ -84,7 +87,7 @@ class KarsilamaEkrani extends StatelessWidget {
                             ? 14
                             : 16,
                     fontStyle: FontStyle.italic,
-                    color: renkler.koyu,
+                    color: _renkler.koyu,
                   ),
                 ),
                 Padding(
@@ -143,7 +146,7 @@ class KarsilamaEkrani extends StatelessWidget {
               ],
             ),
             style: TextButton.styleFrom(
-                backgroundColor: renkler.sertkoyu,
+                backgroundColor: _renkler.sertkoyu,
                 primary: Colors.white,
                 textStyle: const TextStyle(
                   fontSize: 16,
@@ -165,16 +168,16 @@ class KarsilamaEkrani extends StatelessWidget {
         width: 250,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
-          color: renkler.orta,
+          color: _renkler.orta,
           borderRadius: BorderRadius.circular(5),
-          border: Border.all(width: 2, color: renkler.koyu),
+          border: Border.all(width: 2, color: _renkler.koyu),
         ),
         child: Column(
           children: [
             Text(
               title,
               style: TextStyle(
-                  color: renkler.background,
+                  color: _renkler.background,
                   fontSize: 16,
                   fontFamily: "Alatsi"),
             ),
@@ -184,7 +187,7 @@ class KarsilamaEkrani extends StatelessWidget {
                 subtitle,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: renkler.background,
+                    color: _renkler.background,
                     fontSize: 14,
                     fontFamily: "BellotaText"),
               ),

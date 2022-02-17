@@ -28,7 +28,7 @@ class FirebaseLogin {
           email: email, password: password);
       return _giris.user;
     } catch (e) {
-      return e.toString();
+      return e.toString().split("] ")[1];
     }
   }
 
