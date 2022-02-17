@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class AnaSayfa extends StatelessWidget {
   AnaSayfa({Key? key}) : super(key: key);
 
-  User _girisBilgileri = Get.arguments;
+  final User _girisBilgileri = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
