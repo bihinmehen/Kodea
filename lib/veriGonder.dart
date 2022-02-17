@@ -91,19 +91,35 @@ class _VeriGonderState extends State<VeriGonder> {
                   ),
                 ),
               ),
-              textBoxSend("Uygulama Adı", _isimController, ""),
-              textBoxSend("Geliştirici Adı", _gelistiriciController,
-                  "örn: ByBug Stüdyo"),
-              textBoxSend("Uygulama Sürümü", _surumController, "örn: 1.0"),
-              textBoxSend("Kod Platformu", _platformController, "örn: Kodular"),
-              textBoxSend("Direkt Bağlantı", _applinkController,
-                  "Direkt indirme bağlantısı"),
+              textBoxSend(hint: "Uygulama Adı", controller: _isimController),
               textBoxSend(
-                  "Kaynak Logo", _logoController, "Direkt resim bağlantısı"),
-              textBoxSend("Satış Bağlantısı(opsiyonel)", _paymentsController,
-                  "Kaynak kod satış"),
-              textBoxSend("Dökümasyon Bağlantısı(opsiyonel)", _docsController,
-                  "Github bağlantısı"),
+                  hint: "Geliştirici Adı",
+                  controller: _gelistiriciController,
+                  counter: "örn: ByBug Stüdyo"),
+              textBoxSend(
+                  hint: "Uygulama Sürümü",
+                  controller: _surumController,
+                  counter: "örn: 1.0"),
+              textBoxSend(
+                  hint: "Kod Platformu",
+                  controller: _platformController,
+                  counter: "örn: Kodular"),
+              textBoxSend(
+                  hint: "Direkt Bağlantı",
+                  controller: _applinkController,
+                  counter: "Direkt indirme bağlantısı"),
+              textBoxSend(
+                  hint: "Kaynak Logo",
+                  controller: _logoController,
+                  counter: "Direkt resim bağlantısı"),
+              textBoxSend(
+                  hint: "Satış Bağlantısı(opsiyonel)",
+                  controller: _paymentsController,
+                  counter: "Kaynak kod satış"),
+              textBoxSend(
+                  hint: "Dökümantasyon Bağlantısı(opsiyonel)",
+                  controller: _docsController,
+                  counter: "Github bağlantısı"),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 child: Container(
@@ -159,7 +175,10 @@ class _VeriGonderState extends State<VeriGonder> {
     );
   }
 
-  Container textBoxSend(hint, controller, counter) {
+  Container textBoxSend(
+      {required String hint,
+      required TextEditingController controller,
+      String counter = ""}) {
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
       margin: Get.width > 700
