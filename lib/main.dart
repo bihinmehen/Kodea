@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uygulama/karsilamaEkrani.dart';
 import 'package:uygulama/login.dart';
+import 'package:uygulama/veriGonder.dart';
 import 'constants/colors.dart';
 
 void main() async {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'Kodea',
       home: Scaffold(
         backgroundColor: renkler.background,
-        body: KarsilamaEkrani(),
+        body: VeriGonder(),
       ),
     );
   }
