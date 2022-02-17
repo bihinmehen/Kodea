@@ -97,9 +97,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     dynamic _sonuc = await FirebaseLogin()
                         .kayitOl(_epostaController.text, _sifreController.text);
                     if (_sonuc is String) {
-                      setState(() => _girisHatasi = _sonuc.contains("]")
-                          ? _sonuc.split("] ")[1]
-                          : _sonuc);
+                      setState(() => _girisHatasi = _sonuc);
                     } else {
                       Get.off(() => AnaSayfa(), arguments: _sonuc);
                     }

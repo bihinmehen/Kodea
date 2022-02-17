@@ -16,8 +16,8 @@ class FirebaseLogin {
       if (e.toString().contains("[firebase_auth/email-already-in-use]")) {
         return _girisYap(email, password);
       } else {
-        //böyle bir hesap yoksa hatayı döndür
-        return e.toString();
+        //böyle bir hesap yoksa hatayı döndür (ve hata kodunu temizle)
+        return e.toString().split("] ")[1];
       }
     }
   }
