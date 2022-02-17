@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseLogin {
@@ -8,6 +9,7 @@ class FirebaseLogin {
       //kayıt olmayı dene
       final _giris = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      await firestoreBilgiKayit(_giris.user);
       return _giris.user;
     } catch (e) {
       // böyle bir hesap varsa giriş yap
@@ -27,6 +29,13 @@ class FirebaseLogin {
       return _giris.user;
     } catch (e) {
       return e.toString();
+    }
+  }
+
+  Future firestoreBilgiKayit(User? user) async {
+    if (user != null) {
+      final fireStore = FirebaseFirestore.instance.collection("Kullanıcılar");
+      await fireStore.doc(user.uid).set({"email": user.email});
     }
   }
 }
